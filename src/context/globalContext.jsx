@@ -1,10 +1,5 @@
-import { createContext, useState, useEffect } from "react";
-
-const [data, setData] = useState([])
+import { createContext } from "react";
 
 const GlobalContex = createContext()
-
-
-useEffect
 
 export default GlobalContex
