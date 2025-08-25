@@ -1,0 +1,15 @@
+nav {
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav-link:hover {
+  color: blue;
+}
