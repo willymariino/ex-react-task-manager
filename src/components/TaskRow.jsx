@@ -1,11 +1,11 @@
-import { useMemo } from "react"
+import { memo } from "react"
 
-function TaskRow() {
+function TaskRow({ task }) {
 
     return (
         <>
             <tr>
-                <td>{Task.title}</td>
+                <td>{task.title}</td>
                 <td>{task.status}</td>
                 <td>{task.createdAt}</td>
             </tr>
@@ -14,4 +14,4 @@ function TaskRow() {
     )
 }
 
-export default useMemo(TaskRow)
+export default memo(TaskRow)
