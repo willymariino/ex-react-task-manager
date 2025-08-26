@@ -10,14 +10,19 @@ function TaskList() {
         <>
 
             <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Stato</th>
-                    <th>Data di Creazione</th>
-                </tr>
-                {tasks.map(task => (
-                    <TaskRow key={task.id} task={task} />
-                ))}
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Stato</th>
+                        <th>Data di Creazione</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {tasks.map(task => (
+                        <TaskRow key={task.id} task={task} />
+                    ))}
+                </tbody>
 
             </table>
         </>

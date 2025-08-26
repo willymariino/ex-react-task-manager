@@ -28,10 +28,10 @@ function TaskRow({ task }) {
         <>
             <tr>
                 <td>{task.title}</td>
-                <td className={statusColor(task.status)}>{task.status}</td> {/* passo la funzione statusColor con task.status come argomento */}
+                <td className={statusColor(task.status)}>{task.status}</td>
                 <td>{task.createdAt}</td>
             </tr>
-
+            {/* passo la funzione statusColor con task.status come argomento */}
         </>
     )
 }
