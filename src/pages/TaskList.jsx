@@ -9,7 +9,8 @@ function TaskList() {
     return (
         <>
 
-            <table>
+            <table className="To-do-list-table">
+
                 <thead>
                     <tr>
                         <th>Nome</th>

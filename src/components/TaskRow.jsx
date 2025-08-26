@@ -2,21 +2,13 @@ import { memo } from "react"
 
 function TaskRow({ task }) {
 
-    const statusColor = status => { // funzione per cambiare il colore dinamicamente
-        if (status === "To do") {
-            return "To-do"
-        }
-        else if (status === "Doing") {
-            return "Doing"
-        }
-        else if (status === "Done") {
-            return "Done"
-        }
-        else {
-            return "";
-        }
-
+    const statusColor = status => {
+        if (status === "To do") return "To-do"
+        if (status === "Doing") return "Doing"
+        if (status === "Done") return "Done"
     }
+    // non serve mettere else perché il return interrompe già l'esecuzione
+
 
     /*
     In React, l’attributo className può ricevere:
