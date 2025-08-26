@@ -13,3 +13,16 @@ nav {
 .nav-link:hover {
   color: blue;
 }
+
+.To-do {
+  color: red;
+}
+
+.Doing {
+  background-color: #3a093f8a;
+  color: yellow;
+}
+
+.Done {
+  color: green;
+}
