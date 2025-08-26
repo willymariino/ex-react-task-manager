@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import fetchTasks from "../api/tasksApi";
-import GlobalContex from "../context/globalContext";
+import GlobalContext from "../context/globalContext";
 
 
 function GlobalContexProvider({ children }) {
@@ -40,9 +40,9 @@ function GlobalContexProvider({ children }) {
 
     return (
 
-        <GlobalContex.Provider value={{ tasks, setTasks }}>
+        <GlobalContext.Provider value={{ tasks, setTasks }}>
             {children}
-        </GlobalContex.Provider>
+        </GlobalContext.Provider>
 
     )
 
