@@ -32,6 +32,8 @@ function useTask() {
 
         })
 
+        return { task, addTask }
+
     }
 
 
