@@ -7,7 +7,7 @@ import GlobalContext from "../context/globalContext";
 function GlobalContexProvider({ children }) {
     const [tasks, setTasks] = useState([])
 
-
+    // funzione per aggiungere task
     const addTask = task => {
 
         setTasks(curr => {
@@ -36,6 +36,22 @@ function GlobalContexProvider({ children }) {
         })
 
     }
+
+    // funzione per rimuovere task
+    const removeTask = taskId => {
+        setTasks(curr => curr.filter(task => task.id !== taskId))
+    }
+
+
+    // funzione per aggiornare un task
+    const updateTask = updatedTask => {
+        setTasks(curr => curr.map(task =>
+            task.id === updateTask.id
+                ? { ...task, ...updatedTask } : task
+
+        ))
+    }
+
 
 
 
@@ -73,7 +89,7 @@ function GlobalContexProvider({ children }) {
 
     return (
 
-        <GlobalContext.Provider value={{ tasks, setTasks, addTask }}>
+        <GlobalContext.Provider value={{ tasks, setTasks, addTask, removeTask, updateTask }}>
             {children}
         </GlobalContext.Provider>
 
