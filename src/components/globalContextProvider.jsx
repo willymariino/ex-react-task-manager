@@ -25,9 +25,11 @@ function GlobalContexProvider({ children }) {
                 createdAt: new Date().toISOString
             }
 
+            console.log("Task aggiunto:", taskToAdd)
+            console.log("Array aggiornato:", [...curr, taskToAdd])
+
             // sbagliato: non devo annidare un altro setTasks dato che lo sto già chiamando all'inizio della funzione in forma estesa.
             // setTasks(curr => [...curr, taskToAdd]) 
-
 
             // ✅ ritorno il nuovo array, non chiamo di nuovo setTasks
             return [...curr, taskToAdd]
@@ -67,7 +69,7 @@ function GlobalContexProvider({ children }) {
                 // Aggiorna lo stato con i dati ricevuti
                 setTasks(res.data)
                 // Stampa i dati ricevuti nella console per debug
-                console.log(res.data)
+                console.table(res.data)
             }
 
             catch (error) {
