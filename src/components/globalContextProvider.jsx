@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import fetchTasks from "../api/tasksApi";
 import GlobalContext from "../context/globalContext";
+import useTask from "../hooks/useTask";
 
 
 function GlobalContexProvider({ children }) {
@@ -40,7 +41,7 @@ function GlobalContexProvider({ children }) {
 
     return (
 
-        <GlobalContext.Provider value={{ tasks, setTasks }}>
+        <GlobalContext.Provider value={{ tasks, setTasks, addTask }}>
             {children}
         </GlobalContext.Provider>
 
