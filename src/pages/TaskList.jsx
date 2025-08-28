@@ -4,6 +4,7 @@ import TaskRow from "../components/TaskRow"
 
 function TaskList() {
 
+    // Recupero la lista dei task dallo stato globale (GlobalContext)
     const { tasks } = useContext(GlobalContext)
 
     return (
