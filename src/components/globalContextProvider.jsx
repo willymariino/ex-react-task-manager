@@ -45,9 +45,9 @@ function GlobalContexProvider({ children }) {
 
     // funzione per aggiornare un task
     const updateTask = updatedTask => {
-        setTasks(curr => curr.map(task =>
-            task.id === updateTask.id
-                ? { ...task, ...updatedTask } : task
+        setTasks(curr => curr.map(task => // percorre ogni task nell'array corrente
+            task.id === updatedTask.id // se il task corrente ha lo stesso id del task da aggiornare
+                ? { ...task, ...updatedTask } : task // crea un nuovo oggetto che copia le proprietà vecchie e le sovrascrive con quelle aggiornate, se invece è diverso lascia {task} invariato
 
         ))
     }
