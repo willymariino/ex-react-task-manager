@@ -32,10 +32,11 @@ function useTask() {
 
         })
 
-        return { task, addTask }
+
 
     }
 
+    return { tasks, addTask }
 
 }
 
