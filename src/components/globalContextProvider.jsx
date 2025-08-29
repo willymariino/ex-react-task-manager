@@ -8,6 +8,9 @@ function GlobalContexProvider({ children }) {
     const [tasks, setTasks] = useState([])
 
     // funzione per aggiungere task
+    // Qui trasformo il "biglietto scritto dall'utente" (newTask) in un "biglietto ufficiale del sistema".
+    // Aggiungo infatti un id univoco progressivo e la data di creazione (createdAt).
+    // Questo oggetto finale è quello che viene salvato nello stato globale delle tasks.
     const addTask = task => {
 
         setTasks(curr => {
@@ -20,7 +23,7 @@ function GlobalContexProvider({ children }) {
             // curr[curr.length - 1].id = id dell’ultimo elemento
 
             const taskToAdd = {
-                ...task,
+                ...task, // prendo tutti i dati inviati dall'utente, salvati dentro newTask
                 id: lastId + 1,
                 createdAt: new Date().toISOString
             }

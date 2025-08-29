@@ -4,7 +4,7 @@ import useTask from "../hooks/useTask"
 
 function AddTasks() {
 
-    const { tasks, AddTasks } = useTask()
+    const { tasks, setTasks, addTask } = useTask()
 
     const [data, setData] = useState({
         title: "",
@@ -25,11 +25,62 @@ function AddTasks() {
         }))
     }
 
+    const handleSubmit = e => {
+        e.preventdefault()
+
+
+        // Qui creo un oggetto "newTask" che contiene SOLO i dati scritti dall'utente nel form.
+        // È come un biglietto compilato a mano: ha titolo, descrizione e stato, ma ancora
+        // non ha id progressivo né data di creazione (questi li aggiungerà il sistema tramite addTask).
+        const newtask = {
+            title: data.title,
+            description: description.current.value,
+            status: status.current.value,
+        }
+
+        addTask(newtask)
+
+    }
+
 
     return (
-        <>
+        <form onSubmit={handleSubmit}>
 
-        </>
+            <section>
+                <label htmlFor="title"> nome task</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value={data.title}
+                    onChange={handleChange}
+                    placeholder="Nome task"
+                />
+            </section>
+
+            <section>
+                <label htmlFor="description">descrizione task</label>
+                <textarea
+                    ref={description}
+                    placeholder="Descrizione task"
+                    id="description"
+                />
+            </section>
+
+            <section>
+                <label htmlFor="status"></label>
+                <select
+                    id="status"
+                    ref={status}
+                    defaultValue="To do">
+                    <option value="To do">To do</option>
+                    <option value="Doing">Doing</option>
+                    <option value="Done">Done</option>
+                </select>
+            </section>
+
+            <button type="submit">Aggiungi</button>
+        </form>
     )
 }
 
