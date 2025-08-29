@@ -29,7 +29,7 @@ function GlobalContexProvider({ children }) {
             }
 
             console.log("Task aggiunto:", taskToAdd)
-            console.log("Array aggiornato:", [...curr, taskToAdd])
+            console.table("Array aggiornato:", [...curr, taskToAdd])
 
             // sbagliato: non devo annidare un altro setTasks dato che lo sto già chiamando all'inizio della funzione in forma estesa.
             // setTasks(curr => [...curr, taskToAdd]) 

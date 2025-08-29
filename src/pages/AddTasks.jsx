@@ -4,7 +4,7 @@ import useTask from "../hooks/useTask"
 
 function AddTasks() {
 
-    const { tasks, setTasks, addTask } = useTask()
+    const { addTask } = useTask()
 
     const [data, setData] = useState({
         title: "",
@@ -26,7 +26,7 @@ function AddTasks() {
     }
 
     const handleSubmit = e => {
-        e.preventdefault()
+        e.preventDefault()
 
 
         // Qui creo un oggetto "newTask" che contiene SOLO i dati scritti dall'utente nel form.
