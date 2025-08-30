@@ -27,7 +27,9 @@ nav {
 }
 
 .To-do-list-table {
-  background-color: #f0f0f0;
+  background-color: #d0d0d0;
+  margin-top: 20px;
+  padding: 1%;
 }
 
 .task-form {
@@ -63,4 +65,10 @@ nav {
 
 .send-btn:hover {
   background-color: #25c90f;
+}
+
+.send-btn:active {
+  transform: scale(0.95);
+  background-color: #219e0f;
+
 }

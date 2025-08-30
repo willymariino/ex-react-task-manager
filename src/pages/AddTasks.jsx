@@ -31,7 +31,7 @@ function AddTasks() {
 
         // Qui creo un oggetto "newTask" che contiene SOLO i dati scritti dall'utente nel form.
         // È come un biglietto compilato a mano: ha titolo, descrizione e stato, ma ancora
-        // non ha id progressivo né data di creazione (questi li aggiungerà il sistema tramite addTask).
+        // non ha id progressivo né data di creazione (questi li aggiungerà il sistema tramite addTask)
         const newtask = {
             title: data.title,
             description: description.current.value,
@@ -43,6 +43,24 @@ function AddTasks() {
         // funzione di reset campi di input dopo l'invio
         setData({ title: "" })
         description.current.value = ""
+
+        // validazione al submit
+
+        const symbols = "!@#$%^&*()-_=+[]{}|;:'\\\",./`~";
+
+        // controllare se ci sono simboli vietati utilizzando i metodi .som() e .includes()
+        const hasForbiddenSymbols =
+            [...data.title].some(symbol => symbols.includes(symbol)) ||
+            [...description.current.value].some(symbol => symbols.includes(symbol))
+
+        if (
+            !data.title.trim() ||
+            !description.current.value ||
+            hasForbiddenSymbols
+        ) {
+            alert("⚠️ Compila tutti i campi prima di inviare!");
+            return;
+        }
 
 
     }
