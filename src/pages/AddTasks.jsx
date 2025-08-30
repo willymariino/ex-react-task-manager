@@ -48,11 +48,15 @@ function AddTasks() {
 
         if (
             !data.title.trim() ||
-            !description.current.value ||
-            hasForbiddenSymbols
+            !description.current.value
         ) {
-            alert("⚠️ Compila tutti i campi prima di inviare, e non inserire simboli");
-            return;
+            alert("⚠️ Compila tutti i campi prima di inviare");
+            return
+        }
+
+        if (hasForbiddenSymbols) {
+            alert(`non inserire i simboli ${symbols} nei campi di input`)
+            return
         }
 
         // invoco la funzione addTask all'interno dell'hook useTask
