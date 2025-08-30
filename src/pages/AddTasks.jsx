@@ -38,14 +38,7 @@ function AddTasks() {
             status: status.current.value,
         }
 
-        addTask(newtask)
-
-        // funzione di reset campi di input dopo l'invio
-        setData({ title: "" })
-        description.current.value = ""
-
-        // validazione al submit
-
+        // validazione al submit (deve stare sopra il reset del form e addTask, altrimenti, il form viene resettato prima che possa essere validato.)
         const symbols = "!@#$%^&*()-_=+[]{}|;:'\\\",./`~";
 
         // controllare se ci sono simboli vietati utilizzando i metodi .som() e .includes()
@@ -58,9 +51,18 @@ function AddTasks() {
             !description.current.value ||
             hasForbiddenSymbols
         ) {
-            alert("⚠️ Compila tutti i campi prima di inviare!");
+            alert("⚠️ Compila tutti i campi prima di inviare, e non inserire simboli");
             return;
         }
+
+        // invoco la funzione addTask all'interno dell'hook useTask
+        addTask(newtask)
+
+        // funzione di reset campi di input dopo l'invio
+        setData({ title: "" })
+        description.current.value = ""
+
+
 
 
     }
