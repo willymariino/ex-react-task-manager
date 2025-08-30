@@ -40,6 +40,11 @@ function AddTasks() {
 
         addTask(newtask)
 
+        // funzione di reset campi di input dopo l'invio
+        setData({ title: "" })
+        description.current.value = ""
+
+
     }
 
 
