@@ -44,10 +44,10 @@ function AddTasks() {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="task-form">
 
             <section>
-                <label htmlFor="title"> nome task</label>
+                <label htmlFor="title" className="label"> nome task:</label>
                 <input
                     type="text"
                     id="title"
@@ -58,8 +58,8 @@ function AddTasks() {
                 />
             </section>
 
-            <section>
-                <label htmlFor="description">descrizione task</label>
+            <section className="description">
+                <label htmlFor="description" className="label">descrizione task:</label>
                 <textarea
                     ref={description}
                     placeholder="Descrizione task"
@@ -68,7 +68,7 @@ function AddTasks() {
             </section>
 
             <section>
-                <label htmlFor="status"></label>
+                <label htmlFor="status" className="label">status task:</label>
                 <select
                     id="status"
                     ref={status}
@@ -79,7 +79,7 @@ function AddTasks() {
                 </select>
             </section>
 
-            <button type="submit">Aggiungi</button>
+            <button type="submit" className="send-btn">Aggiungi</button>
         </form>
     )
 }

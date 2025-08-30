@@ -29,3 +29,38 @@ nav {
 .To-do-list-table {
   background-color: #f0f0f0;
 }
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+
+.description {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.label {
+  margin-right: 8px;
+}
+
+.send-btn {
+  max-width: max-content;
+  background-color: #3551f1;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 35px;
+  color: white;
+  transition: all 0.8s;
+}
+
+.send-btn:hover {
+  background-color: #25c90f;
+}
